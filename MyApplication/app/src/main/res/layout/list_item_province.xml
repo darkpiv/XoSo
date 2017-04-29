@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_province_name"
+        android:layout_width="0dp"
+        android:textColor="#000"
+        android:layout_marginStart="16dp"
+        android:layout_height="56dp"
+        android:layout_weight="0.7"
+        android:background="@drawable/bg_lottery_tv"
+        android:layout_gravity="start"
+        android:textSize="26sp" />
+    <ImageView
+        android:id="@+id/list_item_genre_arrow"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center|end"
+        android:layout_marginRight="16dp"
+        android:layout_weight="0.3"
+        android:src="@drawable/arrow_down" />
+</LinearLayout>

@@ -1,5 +1,8 @@
 package io.darkpiv.xoso.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 import org.json.JSONArray;
@@ -11,7 +14,7 @@ import java.util.List;
  * Created by darkpiv on 4/28/17.
  */
 
-public class Lottery extends BaseModel {
+public class Lottery extends BaseModel implements Parcelable{
     @SerializedName("1")
     private List<String> giaiNhat;
     @SerializedName("2")
@@ -121,4 +124,49 @@ public class Lottery extends BaseModel {
         this.giaiDacBiet = giaiDacBiet;
         return this;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringList(this.giaiNhat);
+        dest.writeStringList(this.giaiNhi);
+        dest.writeStringList(this.giaiBa);
+        dest.writeStringList(this.giaiTu);
+        dest.writeStringList(this.giaiNam);
+        dest.writeStringList(this.giaiSau);
+        dest.writeStringList(this.giaiBay);
+        dest.writeStringList(this.giaiTam);
+        dest.writeStringList(this.giaiDacBiet);
+    }
+
+    public Lottery() {
+    }
+
+    protected Lottery(Parcel in) {
+        this.giaiNhat = in.createStringArrayList();
+        this.giaiNhi = in.createStringArrayList();
+        this.giaiBa = in.createStringArrayList();
+        this.giaiTu = in.createStringArrayList();
+        this.giaiNam = in.createStringArrayList();
+        this.giaiSau = in.createStringArrayList();
+        this.giaiBay = in.createStringArrayList();
+        this.giaiTam = in.createStringArrayList();
+        this.giaiDacBiet = in.createStringArrayList();
+    }
+
+    public static final Creator<Lottery> CREATOR = new Creator<Lottery>() {
+        @Override
+        public Lottery createFromParcel(Parcel source) {
+            return new Lottery(source);
+        }
+
+        @Override
+        public Lottery[] newArray(int size) {
+            return new Lottery[size];
+        }
+    };
 }

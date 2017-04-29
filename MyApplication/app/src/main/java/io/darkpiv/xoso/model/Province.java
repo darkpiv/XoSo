@@ -3,6 +3,7 @@ package io.darkpiv.xoso.model;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
 import org.json.JSONObject;
 
@@ -13,11 +14,12 @@ import java.util.List;
  * Created by darkpiv on 4/29/17.
  */
 
-public class Province extends BaseModel {
+public class Province extends ExpandableGroup<Date> {
     public static final String TAG = "PROVINCE PARSING";
 
-    private String provinceName;
-    private List<Date> dates;
+    public Province(String title, List<Date> items) {
+        super(title, items);
+    }
 
     public static List<Province> parseListProvince(JSONObject jsonObject) {
         List<Province> listProvince = new ArrayList<>();
@@ -35,14 +37,14 @@ public class Province extends BaseModel {
     }
 
     public static Province parseProvince(String name, JSONObject provinceData) {
-        Province province = new Province();
+        List<Date> listDate = new ArrayList<>();
+        Province province = new Province("", listDate);
         try {
             List<String> tmpDate = new ArrayList<>();
             for (int i = 0; i < provinceData.names().length(); i++) {
                 tmpDate.add(provinceData.names().getString(i));
             }
             Lottery tmpLot;
-            List<Date> listDate = new ArrayList<>();
             for (int i = 0; i < tmpDate.size(); i++) {
                 JSONObject tempLot = provinceData.getJSONObject(tmpDate.get(i));
                 tmpLot = new Gson()
@@ -52,7 +54,8 @@ public class Province extends BaseModel {
                         .setLottery(tmpLot));
 
             }
-            province.setProvinceName(name).setDates(listDate);
+            province = new Province(name, listDate);
+
 
         } catch (Exception e) {
             Log.e(TAG, "parseProvince: ", e);
@@ -63,20 +66,12 @@ public class Province extends BaseModel {
 
 
     public String getProvinceName() {
-        return provinceName;
+        return getTitle();
     }
 
-    public Province setProvinceName(String provinceName) {
-        this.provinceName = provinceName;
-        return this;
-    }
 
     public List<Date> getDates() {
-        return dates;
+        return getItems();
     }
 
-    public Province setDates(List<Date> dates) {
-        this.dates = dates;
-        return this;
-    }
 }

@@ -70,7 +70,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         presenter = new MainPresenter(context);
         presenter.attachView(this);
     }
+    @Override
+    public void onResume() {
+        super.onResume();
+        ViewUtil.hideKeyboardFrom(this, getCurrentFocus());
 
+    }
     @Override
     protected int getRootLayoutId() {
         return R.layout.activity_main;
@@ -107,9 +112,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Pick Lottery";
+                    return "Xem theo tỉnh";
                 case 1:
-                    return "All Lotteries";
+                    return "Tất cả";
 
             }
             return "";

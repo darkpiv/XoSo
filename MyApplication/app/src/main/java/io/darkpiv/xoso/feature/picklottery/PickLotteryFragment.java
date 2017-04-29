@@ -1,6 +1,7 @@
 package io.darkpiv.xoso.feature.picklottery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -16,8 +17,11 @@ import android.widget.Toast;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import io.darkpiv.xoso.R;
+import io.darkpiv.xoso.feature.moreinfo.MoreInfoActivity;
 import io.darkpiv.xoso.model.Lottery;
+import io.darkpiv.xoso.util.ViewUtil;
 import io.darkpiv.xoso.util.baseui.BaseFragment;
 
 public class PickLotteryFragment extends BaseFragment<PickLotteryPresenter> implements PickLotteyView {
@@ -79,13 +83,15 @@ public class PickLotteryFragment extends BaseFragment<PickLotteryPresenter> impl
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        presenter.getXoSo();
         return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        presenter.getXoSo();
+        ViewUtil.hideKeyboardFrom(getContext(), rootView);
+
     }
 
     @Override
@@ -156,5 +162,9 @@ public class PickLotteryFragment extends BaseFragment<PickLotteryPresenter> impl
         return builder.toString();
     }
 
-
+    @OnClick(R.id.btn_more_info)
+    public void openMoreInfo(View view) {
+        Intent intent = new Intent(getContext(), MoreInfoActivity.class);
+        getContext().startActivity(intent);
+    }
 }

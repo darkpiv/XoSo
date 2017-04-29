@@ -1,6 +1,9 @@
 package io.darkpiv.xoso.feature.picklottery;
 
+import android.app.Dialog;
 import android.content.Context;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -10,6 +13,8 @@ import io.darkpiv.xoso.model.Date;
 import io.darkpiv.xoso.model.ErrorResponse;
 import io.darkpiv.xoso.model.Province;
 import io.darkpiv.xoso.network.NetworkModule;
+import io.darkpiv.xoso.util.JSONUtil;
+import io.darkpiv.xoso.util.ViewUtil;
 import io.darkpiv.xoso.util.baselogic.BasePresenter;
 
 /**
@@ -21,6 +26,7 @@ public class PickLotteryPresenter extends BasePresenter<PickLotteyView, PickLott
     private List<Date> date;
     private List<Province> listProvince;
     private int currentProvince;
+    private Dialog waitingDialog;
 
     public PickLotteryPresenter(Context context) {
         super(context);
@@ -32,6 +38,7 @@ public class PickLotteryPresenter extends BasePresenter<PickLotteyView, PickLott
         listProvince = new ArrayList<>();
         NetworkModule networkModule = new NetworkModule(new File(context.getCacheDir(), "xosocache"));
         interactor = new PickLotteryInteractor(networkModule.providesNetworkService());
+        waitingDialog = ViewUtil.getWaitingDialog(context);
     }
 
     @Override
@@ -40,19 +47,34 @@ public class PickLotteryPresenter extends BasePresenter<PickLotteyView, PickLott
     }
 
     public void getXoSo() {
+        waitingDialog.show();
         interactor.getXoSo(this::onXoSoSuccess, this::onXoSoFailure);
     }
 
     public void onXoSoSuccess(List<Province> listProvince) {
         this.listProvince = listProvince;
         List<String> pro = new ArrayList<>();
-        for(int i=0;i<listProvince.size();i++) {
+        for (int i = 0; i < listProvince.size(); i++) {
             pro.add(listProvince.get(i).getProvinceName());
         }
         getView().onReceivedData(pro);
+        waitingDialog.dismiss();
     }
 
     public void onXoSoFailure(ErrorResponse errorResponse) {
+        try {
+            String s = JSONUtil.loadJSONFromAsset(context, "data");
+            JSONObject object = new JSONObject(s);
+            this.listProvince = Province.parseListProvince(object);
+            List<String> pro = new ArrayList<>();
+            for (int i = 0; i < listProvince.size(); i++) {
+                pro.add(listProvince.get(i).getProvinceName());
+            }
+            getView().onReceivedData(pro);
+            waitingDialog.dismiss();
+        } catch (Exception e) {
+            getView().onNetworkFailed(e);
+        }
 
     }
 

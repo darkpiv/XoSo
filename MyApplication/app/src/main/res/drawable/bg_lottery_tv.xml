@@ -1,7 +1,7 @@
 <shape android:shape="rectangle"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <corners android:radius="0dp" />
-    <stroke android:color="@color/bg_lottery_tv_stroke" />
-    <solid android:color="@color/WHITE"/>
+    <stroke android:color="@color/bg_lottery_tv_stroke"/>
+
     <padding android:bottom="4dp" android:left="4dp" android:right="4dp" android:top="4dp" />
 </shape>
