@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:focusableInTouchMode="true"
+    tools:context="io.darkpiv.xoso.feature.picklottery.PickLotteryFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <Spinner
+                android:id="@+id/spn_province"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="0.45"
+                android:ellipsize="start"
+                android:hint="Province" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="0.1" />
+
+            <Spinner
+                android:id="@+id/spn_date"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="0.45"
+                android:ellipsize="start"
+                android:hint="Date" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_input"
+            android:paddingBottom="56dp"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/list_lottery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_more_info"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:text="More Info"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải Đặc Biệt"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:textColor="@color/RED"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_dac_biet"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải nhất"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_nhat"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải nhì"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_nhi"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải ba"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_ba"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải tư"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_tu"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải năm"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_nam"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải sáu"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_sau"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải bảy"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_bay"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.3"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:text="Giải tám"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tv_giai_tam"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.65"
+                android:background="@drawable/bg_lottery_tv"
+                android:gravity="center"
+                android:textAppearance="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
